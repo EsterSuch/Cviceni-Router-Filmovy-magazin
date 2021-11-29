@@ -4,11 +4,16 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
+  Navigate,
 } from 'react-router-dom';
-import MovieList from './components/MovieList'
-import Movie from './components/Movie';
 
+import Movie from './components/Movie';
+import Menu from './components/Menu';
+import Home from './components/Home';
+import Articles from './components/Articles';
+import Reviews from './components/Reviews';
+import Movies from './components/Movies';
+import NoMovies from './components/NoMovies';
 import movies from './movies.js';
 
 import './style.css';
@@ -16,11 +21,16 @@ import './style.css';
 const App = () => {
   return (
     <BrowserRouter>
-      <h1>Movies</h1>
+      <Menu />
 
       <Routes>
-        <Route path="/" element={<MovieList />} />
-        <Route path="/movies/:id" element={<Movie />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/articles/" element={<Articles />} />
+        <Route path="/reviews/" element={<Reviews />} />
+        <Route path="/movies/" element={<Movies />} >
+          <Route index element={<Navigate to="/movies/1" replace={true} />} />
+          <Route path=":id" element={<Movie />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

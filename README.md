@@ -8,6 +8,8 @@ Navazujeme na předchozí cvičení **React Router - Filmy**.
 	```
 	npm install
 	```
+https://filmovy-magazin.netlify.app/
+
 
 3. Aplikace by měla být ve stavu, že v hlavní `App` máme dvě `<Route>`, z nichž jedna zobrazuje seznam filmů `<MovieList />` a druhá detail filmu `<Movie />`. Z detailu filmu se můžeme vrátit zpět na hlavní stránku s přehledem filmů.
 
